@@ -1,0 +1,35 @@
+.skill-glow-box {
+  --mx: 50%;
+  --my: 50%;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.3s;
+}
+
+.skill-glow-box::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    240px circle at var(--mx) var(--my),
+    rgba(120, 80, 255, 0.18),
+    transparent 70%
+  );
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  border-radius: inherit;
+  z-index: 0;
+}
+
+.skill-glow-box:hover::before {
+  opacity: 1;
+}
+
+.skill-glow-box:hover {
+  border-color: rgba(140, 100, 255, 0.85) !important;
+  box-shadow: 0 0 24px rgba(100, 60, 220, 0.25);
+}
+.flip-card:hover .flip-inner {
+  transform: rotateY(180deg);
+}
